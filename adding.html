@@ -1,0 +1,206 @@
+         
+<h2 style="color:chartreuse"> Adding Elements</h2>
+<script>
+    
+    function f1(){
+        var collection=["Delhi","Mumbai","Hyd"];
+         collection.push("Goa","Chennai");//LAst item
+         collection.unshift("Beng","Ap");//first item
+         collection.splice(1,0,"telangana","kerala");//new item at any location
+        collection.map(function(value){
+            document.write(`<li>${value}</li>`);
+        })
+    }
+    f1();
+</script>
+
+<br>
+
+<h2 style="color: chartreuse;">Removing Elements</h2>
+<script>
+     function f1(){
+        var collection=["Delhi","Mumbai","Hyd"];
+        //  collection.pop();//last Item
+        //  collection.shift();//first Item
+         collection.splice(2,1);
+        collection.map(function(value){
+            document.write(`<li>${value}</li>`);
+        })
+    }
+    f1();
+</script>
+
+<h4>Searching Elements(filter()) </h4>
+<script>
+    function f1(){
+        var sales=[32000,56000,58000,34000,23000];
+        var result=sales.filter(function(value){
+            return value>=50000;
+        });
+        result.map(function(val){
+            document.write(`<li>${val}</li>`)
+        })
+    }
+    f1();
+</script>
+
+<h2>Searching Elements(find())</h2>
+<script>
+    function f1(){
+        var sales=[32000,56000,58000,32000,23000];
+        var result=sales.find(function(value){
+            return value>=50000;
+        });
+        document.write(result); 
+    }
+    f1();
+</script>
+
+
+<h2>Sortings</h2>
+
+<script>
+    function f1(){
+        var sales=[32000,56000,58000,34000,23000];
+        sales.sort();
+        sales.reverse();
+        sales.map(function(value){
+            document.write(`<li>${value}</li>`);
+        }); 
+        
+    }
+    f1();
+</script>
+<br>
+
+<script>
+    function f1(){
+     var collection=["Electronis",["TV","Mobile"]];
+     document.write(collection[1][0]);
+    }
+    f1();
+</script>
+<br>
+<script>
+    function f1(){
+        var collection=["Samsung TV","Nike Casuals"];
+        var[tv,shoe]=collection;
+        document.write(tv);
+    }f1();
+</script>
+<br>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Array</title>
+        <script>
+             var cities=["Delhi","Hyd","Chennai"];
+             function LoadCities(){
+                 document.getElementById("lstCities").innerHTML="";
+                 for(var item of cities){
+                     var opt=document.createElement("option");
+                     opt.text=item;
+                     document.getElementById("lstCities").appendChild(opt);
+                 }
+             }
+            function bodyload(){
+               LoadCities();
+
+            }
+            function AddClick(){
+                var cityName=document.getElementById("txtCity").value;
+                cities.push(cityName);
+                alert("City Added");
+                document.getElementById("txtCity").value="";
+                LoadCities();
+            }
+        </script>
+    </head>
+    <body onload="bodyload()">
+        <fieldset>
+            <legend>Add Cities</legend>
+            City Name:<input type="text" id="txtCity">
+            <button onclick="AddClick()">Add</button>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend> Cities List</legend>
+            <select size="10" id="lstCities" style="width: 130px;">
+                
+            </select>
+        </fieldset>
+    </body>
+</html>
+
+<br>
+
+<script>
+    var collection = new Map();
+    collection.set("TV", "Samsung TV");
+    collection.set(2, "Lenonvo Laptop");
+    for(var key of collection.entries()){
+        document.write(key + "<br>");
+    }
+    document.write("Total Count of Keys: " + collection.size);
+</script>
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>Arrays</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            var categories = ["Electronics", "Footwear", "Fashion"];
+            function bodyload(){
+                for(var category of categories)
+                {
+                    var li = document.createElement("li");
+                    li.innerHTML = category;
+                    document.querySelector("ol").appendChild(li);
+
+                    var option = document.createElement("option");
+                    option.text = category;
+                    document.querySelector("select").appendChild(option);
+
+                    var tr = document.createElement("tr");
+                    var td = document.createElement("td");
+                    td.innerHTML = category;
+                    tr.appendChild(td);
+                    document.querySelector("tbody").appendChild(tr);
+                }
+            }
+        </script>
+    </head>
+    <body onload="bodyload()">
+        <div class="container-fluid">
+            <h2 class="text-center bg-danger text-white">Arrays</h2>
+            <div class="row">
+                <div class="col">
+                    <h3>Categories List</h3>
+                    <ol>
+
+                    </ol>
+                </div>
+                <div class="col">
+                   <h3>Select Category</h3>
+                   <select class="form-select">
+
+                   </select>
+                </div>
+                <div class="col">
+                    <h3>Categories Table</h3>
+                    <table class="table table-hover table-dark">
+                        <thead>
+                            <tr>
+                                <th>Categories</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html> -->
+<br>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Location</title>
+        <style>
+            dt {
+                background-color: gray;
+                color:white;
+            }
+        </style>
+        <script>
+            function GetLocation(){
+                document.getElementById("host").innerHTML = location.host;
+                document.getElementById("protocol").innerHTML = (location.protocol=='http:')?`You are accessing ${location.protocol} from Web Server`:"You are accessign from File Server";
+                document.getElementById("port").innerHTML = location.port;
+                document.getElementById("path").innerHTML = location.pathname;
+                document.getElementById("href").innerHTML = location.href;
+            }
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend><button onclick="GetLocation()">Get Location Details</button></legend>
+            <dl>
+                <dt>Server Name / IP Address</dt>
+                <dd id="host"></dd>
+                <dt>Protocol</dt>
+                <dd id="protocol"></dd>
+                <dt>Port</dt>
+                <dd id="port"></dd>
+                <dt>URL</dt>
+                <dd id="href"></dd>
+                <dt>Path</dt>
+                <dd id="path"></dd>
+            </dl>
+        </fieldset>
+    </body>
+</html>

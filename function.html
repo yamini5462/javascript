@@ -1,0 +1,112 @@
+<script>
+    function printNum(totalCount){
+        for(var i=1;i<=totalCount;i++)
+        {
+            document.write(i+"<br>")
+        }
+    }
+  printNum(10);
+</script>  
+<br>
+<script>
+    function PrintNum(startNum,endNum){
+        for(var i=startNum;i<=endNum;i++){
+            document.write(i+"<br>");
+        }
+    }
+    PrintNum(24,30);
+</script>
+<br>
+
+<h2>Function As Parameter</h2>
+<script>
+    function Login(userid,password,success,failure){
+        if(userid=='yamini' && password=='john'){
+            success();
+        }else{
+            failure();
+        }
+    }
+    Login('yamini','yamini',function(){document.write("Login Success")},function(){document.write("Invalid Credentials")});
+</script>
+<h2>Rest Parameter</h2>
+<script>
+    function Login(msg,...loginDetails)
+     {
+         const [userid, password, success, failure] = loginDetails;
+         document.write(msg);
+         if(userid=="john" && password=="john11")
+         {
+             success();
+         }
+          else {
+             failure();
+         }
+       
+     }
+     Login("<h2>Rest Parameters</h2>",'john', 'john11', function(){document.write('Login Success')}, function(){document.write('Invalid Credentials')});
+</script>
+<br>
+<script>
+    function PrintDetails()
+    {
+        document.write("Statement1 ");
+        
+        document.write("\n Statement2");
+        return;
+        document.write("Statement3");
+    }
+    PrintDetails();
+</script>
+
+<br>
+
+<script>
+    function Outer()
+    {
+        var msg = "Message from Outer Function";
+             function Inner(){
+                  var outerMessage = msg;
+                  var innerMessage = "Message from Inner Function";
+                 return outerMessage + "<br>" + innerMessage;
+                }
+             return Inner();
+        
+    }
+    document.write(Outer());
+   
+</script>
+<br>
+<!-- <script>
+    var products = [
+        {Name: 'TV', Category: 'Electronics'},
+        {Name: 'Shoe', Category: 'Footwear'},
+        {Name: 'Mobile', Category: ''}
+    ];
+    var electronics = products.filter( item=> item.Category=='Electronics');
+    for(var item of electronics){
+        document.write(item.Name + "<br>");
+    }
+</script> -->
+
+<br>
+<script>
+    class Product
+    {
+        Name = "Mobile";
+        Price = 56000;
+        Qty = 3;
+        Total(){
+            return this.Qty * this.Price;
+        }
+        Print(){
+            document.write(``);
+        }
+    }
+    let obj = new Product;
+    obj.Total();
+</script>
+
+<br>
+
+

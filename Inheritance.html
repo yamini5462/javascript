@@ -1,0 +1,15 @@
+<script>
+    class Base{
+        Print(){
+            document.write("Base-Class ");
+        }
+    }
+    class Derived extends Base{
+        Print(){
+            super.Print();
+            document.write("Derived-Class");
+        }
+    }
+    let obj=new Derived;
+    obj.Print();
+</script>

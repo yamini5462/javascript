@@ -1,0 +1,40 @@
+<script>
+     
+    function f1(){
+        var msg="Welcome to JavaScript";
+        document.write("Total No.of Chars:"+msg.length);
+         
+    }
+    f1();
+</script>
+<br>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>String</title>
+        <script>
+            //  CharAt()
+            // function verifyString(){
+            //     var txtName=document.getElementById("txtName").value;
+            //     document.write(txtName.charAt(3));
+            // }
+
+
+            function verifyString(){
+                var txtName=document.getElementById("txtName").value;
+                var msg=document.getElementById("msg")
+                if(txtName.charCodeAt(0)>=65 && txtName.charCodeAt(0)<90){
+                    document.write(`Hello ! ${txtName}`);
+                } else{
+                    msg.innerHTML="Name must start with Uppercase Letter";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        Name:<input type="text" placeholder="Name Must Start with Upper Case Letter" id="txtName" onblur="verifyString()" >
+        <span id="msg">
+
+        </span>
+    </body>
+</html>

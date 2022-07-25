@@ -1,0 +1,27 @@
+<script>
+    class Employee{
+        FirstName;
+        LastName;
+        Designation;
+        Print(){
+            document.write('${this.FirstName} ${this.LastName} ${this.Designation}');
+        }
+    }
+    class Developer extends Employee{
+        FirstName="yamini";
+        LastName="R";
+        Designation="Developer";
+        Role="Developer Role: Build,Debug,Test,Deploy <br>";
+        Print(){
+            super.Print();
+            document.write(this.Role);
+        }
+    }
+    let employee=new Array(new Developer());
+    let designation=prompt("Enter Designation");
+    for(var employees of employee){
+        if(employees.designation==designation){
+            employees.Print();
+        }
+    }
+</script>

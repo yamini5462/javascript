@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo</title>
+        <script>
+        function bodyload(){
+              // By using DOM Hierarchy:
+            // window.document.images[0].src="/Dog.jpg";
+            // window.document.forms[0].elements[1].value="Register";
+            // window.document.forms[1].elements[1].value="Log in";
+
+                     //By Using Name:
+                     pic.src="/Dog.jpg";
+                     frmRegister.btnRegister.value="Register";
+                     frmLogin.btnLogin.value="Login";
+                     
+                           //By Using  ID:
+                        //   document.getElementById("pic").src="/Dog.jpg";
+                        //   document.getElementById("btnRegister").value="Register";
+                        //   document.getElementById("btnLogin").value="Login";  
+
+                                   //By Using TagName:  
+                                //   x=  document.getElementsByTagName("img");
+                                //   x=  document.getElementsByTagName("div");
+                                //     alert("Total No.of Divs:"+x.length);
+
+                                           //By Using ClassName:
+                                            // x=document.getElementsByClassName("container");
+                                            // alert(x.length);
+
+                                                 //By Using Name:
+                                                  x=document.getElementsByName("txtName");
+                                                  alert(x.length);
+        }  
+        </script>
+    </head>
+    <body onload="bodyload()">
+       <div class="container">
+        <img name="pic" id="pic" width="100" height="100" border="1">
+       </div>
+       <div class="container">
+           <form name="frmRegister">
+               <h3>Register</h3>
+               Email:<input name="txtEmail" type="email"> <input id="btnRegister" name="btnRegister" type="button">
+           </form>
+       </div>
+       <div>
+        <form name="frmLogin">
+            <h3>Login</h3>
+            User Name:<input name="txtName" type="text"> <input id="btnLogin" name="btnLogin" type="button">
+        </form>
+    </div>
+        <!-- <h1>Click Print Button To Print Page</h1>
+        <button onclick="PrintPage()">Print Page</button> -->
+    </body>
+</html>

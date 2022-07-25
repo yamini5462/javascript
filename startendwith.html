@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start With End With</title>
+        <script>
+            function verifyCard(){
+                var txtCard=document.getElementById("txtCard").value;
+                var pic=document.getElementById("pic");
+                if(txtCard.startWith("4444")){
+                    pic.src="/assets/Capture.PNG";
+                } else if(txtCard.startWith("5555")){
+                    pic.src="../assets/Dog.jpg"
+                } else {
+                    pic.src="";
+                    pic.alt="N/A";
+                }
+            }
+        </script>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    </head>
+    <body>
+        <fieldset>Verify card</fieldset>
+        <dl>
+            <dt>Your Card Number</dt>
+            <dd class="input-group">
+                <input type="text" onkeyup="verifyCard()" id="txtCard" class="form-control">
+                <span class="input-group-text">
+                    <img id="pic" width="50" height="20px">
+
+                </span>
+            </dd>
+        </dl>
+    </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inline</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            function RegisterClick(){
+                document.getElementById("tblDetails").style.display="block";
+                document.getElementById("lblName").innerHTML=document.getElementById("txtName").value;
+                document.getElementById("lblPrice").innerHTML=document.getElementById("txtPrice").value;
+                document.getElementById("lblShippedTo").innerHTML=document.getElementById("lstShippedTo").value;
+               optStock= document.getElementById("optStock");
+               status;
+               if(optStock.checked){
+                   status="Available";
+               } else {
+                   status="out of Stack";
+               }
+               document.getElementById("lblStock").innerHTML=status;
+            }
+        </script>
+    </head>
+    <body class="container-fluid">
+        <div class="mt-3">
+            <button data-bs-toggle="modal" data-bs-target="#registerModal" class="btn btn-primary">Register Product</button>
+            <div class="modal fade" id="registerModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Register New Product</h3>
+                            <button  data-bs-dismiss="modal" class="btn btn-close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <dl>
+                                <dt>Product Name</dt>
+                                <dd>
+                                    <input type="text" id="txtName"  class="form-control">
+                                </dd>
+                                <dt>Price</dt>
+                                <dd>
+                                    <input type="text" id="txtPrice" class="form-control">
+                                </dd>
+                                <dt>Shipped To</dt>
+                                <dd>
+                                    <select id="lstShippedTo" class="form-select">
+                                        <option>Delhi</option>
+                                        <option>Hyderabad</option>
+                                        <option>Chennai</option>
+                                        <option>Bng</option>
+                                    </select>
+                                </dd>
+                                <dt>InStock</dt>
+                                <dd class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="optStock">
+                                    <label>Yes</label>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="modal-footer">
+                            <button onclick="RegisterClick()" data-bs-dismiss="modal" class="btn btn-primary">Register</button>
+                            <button data-bs-dismiss="modal" class="btn btn-danger">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3">
+                <dl>
+                    <table id="tblDetails" style="display:none;" class="table table-hover">
+                        <tr>
+                            <td>Name</td>
+                            <td id="lblName"></td>
+                        </tr>
+                        <tr>
+                            <td>Price</td>
+                            <td id="lblPrice"></td>
+                        </tr>
+                        <tr>
+                            <td>Shipped To</td>
+                            <td id="lblShippedTo"></td>
+                        </tr>
+                        <tr>
+                            <td>Stock</td>
+                            <td id="lblStock"></td>
+                        </tr>
+                    </table>
+                </dl>
+                
+            </div>
+        </div>
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </body>
+</html>

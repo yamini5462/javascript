@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Navigator</title>
+        <script>
+            function GetDetails(){
+                document.querySelector("p").innerHTML= `
+                   Browser Family : ${navigator.appName} <br>
+                   Language  : ${navigator.language} <br>
+                   Platform  : ${navigator.platform} <br>
+                   Cookie Enabled : ${(navigator.cookieEnabled)==true?"Yes":"No-Please Enabled Cookies on Your Browser"}
+                `;
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="GetDetails()">Get Details</button>
+        <p></p>
+    </body>
+</html>

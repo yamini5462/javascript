@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Images Index</title>
+    </head>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../Font/css/all.css">
+    <script>
+        var products=["../assets/laptop.jpg","../assets/mobile.jpg","../assets/watch.jpg","../assets/Dog.jpg"];
+        function showImage(index){
+            var pic=document.getElementById("pic");
+            pic.src=products[index];
+            document.getElementById("slider").value=count ;
+        }
+        function bodyLoad(){
+            showImage(0);
+        }
+        var count=0;
+        function NextClick(){
+            if(count<(products.length-1)){
+                count++;
+            showImage(count);
+            }else{
+                alert("End of Show");
+            }
+            
+        }
+        function PreviousClick(){
+           if(count>0){ 
+               count--;
+            showImage(count);
+           }else{
+               alert("no more images");
+           }
+        }
+        function ChangeImage(){
+            var sliderValue=document.getElementById("slider").value;
+            showImage(sliderValue);
+        }
+    </script>
+    <body class="container-fluid" onload="bodyLoad()">
+        <div class="card mt-3">
+            <div class="card-header text-center">
+                <h2>Product Phots</h2>
+            </div>
+            <div class="card-body text-center">
+                <img id="pic" height="200" weight="20%">
+                <p>
+                    <input type="range" onchange="ChangeImage()" min="0" max="3" value="0" id="slider">
+                </p>
+            </div>
+            <div class="card-footer text-center">
+                <button class="btn btn-outline-danger" onclick="PreviousClick()">
+                    <span class="fa fa-arrow-alt-circle-left"></span>
+                </button>
+                <button class="btn btn-outline-danger" onclick="NextClick()">
+                    <span class="fa fa-arrow-alt-circle-right"></span>
+                </button>
+            </div>
+        </div>
+    </body>
+</html>

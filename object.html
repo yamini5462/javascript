@@ -1,0 +1,102 @@
+<!-- <script>
+    function f1(){
+        var product={
+            Name:"",
+            Price:0,
+            Qty:2,
+            Total:function(){
+                return this.Qty* this.Price;
+            },
+            Print:function(){
+                document.write(`Name=${this.Name}<br>
+                                Price=${this.Price}<br>
+                                Qty=${this.Qty}<br>
+                                Total=${this.Total()}`)
+            }
+
+        }
+        product.Name="Samsung";
+        product.Price=40000.00;
+        product.Qty=2;
+        product.Print();
+        document.write(`<hr>`);
+        product.Name="Real me";
+        product.Price=43000.00;
+        product.Qty=2;
+        product.Print();
+    }
+    f1();
+</script>
+<br>
+
+<br>
+<script>
+    function f1(){
+        var data=[
+            {Name:"Samaung TV",Price:40982.72},
+            {Name:"Mobile",Price:6200.98},
+            {Name:"Friz",Price:65000.98}
+        ];
+        document.write(`Mobile Price=`+data[1].Price);
+        document.write(`<br><hr>`);
+        data.map(function(product){
+            document.write(`${product.Name}-${product.Price}<br>`);
+        })
+    }
+    f1();
+</script>
+<br>
+<br> -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON</title>
+        <script>
+            var products = [
+    
+                {Name: "Laptop", Price: 67000.44, Photo: "../assets/laptop.jpg"},
+                {Name: "Mobile", Price: 12000.44, Photo: "../assets/mobile.jpg"},
+                {Name: "Dog", Price: 34000.44, Photo:"../assets/Dog.jpg"}
+            ];
+            function bodyload(){
+                for(var product of products)
+                {
+                    var tr = document.createElement("tr");
+                    var tdName = document.createElement("td");
+                    var tdPrice = document.createElement("td");
+                    var tdPhoto = document.createElement("td");
+
+                    tdName.innerHTML = product.Name;
+                    tdPrice.innerHTML = product.Price;
+
+                    var img = document.createElement("img");
+                    img.src = product.Photo;
+                    img.width = "70";
+                    img.height="80";
+
+                    tdPhoto.appendChild(img);
+
+                    tr.appendChild(tdName);
+                    tr.appendChild(tdPrice);
+                    tr.appendChild(tdPhoto);
+
+                    document.querySelector("tbody").appendChild(tr);
+                }
+            }
+        </script>
+    </head>
+    <body onload="bodyload()">
+        <table border="1" width="700">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Preview</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </body>
+</html>

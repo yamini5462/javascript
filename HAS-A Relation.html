@@ -1,0 +1,17 @@
+<script>
+    class BaseClass{
+        based(){
+            document.write("Base Class");
+        }
+    }
+    class Derived{
+       derived(){
+        let obj=new BaseClass();
+        obj.based();
+        document.write("Derived Class");
+       }
+        
+    }
+    let obj=new Derived();
+        obj.derived();
+</script>

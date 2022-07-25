@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <script>
+            var users=[
+                {userName:"",password:""},
+                {userName:"Kalyani",password:"admin"}
+            ];
+            function LoginClick(){
+                var txtName=document.getElementById("txtName").value;
+                var txtpwd=document.getElementById("txtpwd").value;
+              for( var user of users){
+                  if(user.userName==txtName && user.password==txtpwd){
+                      document.write("Log in Success");
+                  } else{
+                      document.getElementById("msg").innerHTML="UserName/Password Invalid"
+                  }
+              }   
+            }
+        </script>
+    </head>
+    <body>
+        <dl>
+           <dt>UserName</dt>
+           <dd><input type="text" id="txtName"></dd>
+           <dt>Password</dt>
+           <dd><input type="password" id="txtpwd"></dd>
+        </dl>
+        <button onclick="LoginClick()">Login</button>
+        <h1 align="center"  id="msg"></h1>
+    </body>
+</html>
+
+<script>
+    function f1(){
+        var x=10;
+    var y="10";
+    document.write("x==y: " + (x===y));
+    document.write("<br>");
+    document.write("x==y: " + (x==y));
+    }f1();
+</script>

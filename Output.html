@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Handle Output</title>
+        <script>
+            function DeleteClick(){
+            //    result= confirm("Record Will be Deleted");
+            //      if(result== true){
+            //          alert("Record Deleted Successfully...");
+            //         }
+            //         else{
+            //               alert("canceled...");
+            //              }
+                       
+                
+            // result= confirm("Record Will be Deleted");
+            //      if(result== true){
+            //          document.write("Record Deleted Successfully...");
+            //         }
+            //         else{
+            //               document.write("canceled...");
+            //              }
+
+            result= confirm("Record Will be Deleted");
+                 if(result== true){
+                     document.getElementById("msg").innerHTML="<font color='red'>Record Deleted Successfully..<font>";
+                    }
+                    else{
+                          document.getElementById("msg").innerText="<b>canceled...</b>";
+                         }
+              }
+        </script>
+    </head>
+    <body>
+        <button onclick="DeleteClick()">Delete</button>
+        <p id="msg"></p>
+    </body>
+</html>
